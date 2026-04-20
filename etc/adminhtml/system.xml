@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="fufa" translate="label" sortOrder="900">
+            <label>Fufa</label>
+        </tab>
+        <section id="fufa_webhook" translate="label" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Webhook</label>
+            <tab>fufa</tab>
+            <resource>Fufa_Webhook::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="endpoint_url" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Webhook Endpoint URL</label>
+                    <comment>Public HTTPS endpoint that receives Fufa event envelopes.</comment>
+                    <frontend_class>validate-url</frontend_class>
+                </field>
+                <field id="hmac_secret" translate="label comment" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>HMAC Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment>Used to sign payloads with HMAC-SHA256.</comment>
+                </field>
+                <field id="abandon_threshold_minutes" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Abandoned Cart Threshold (Minutes)</label>
+                    <comment>Quotes older than this threshold with email or phone and no order are sent by cron.</comment>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

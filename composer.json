@@ -1,0 +1,30 @@
+{
+    "name": "fufa/module-webhook",
+    "description": "Sends Magento store order, shipment, refund, and abandoned-cart events to an external webhook endpoint with HMAC-SHA256 signed payloads.",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Fufa",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1 || ^8.2 || ^8.3",
+        "magento/framework": "^103.0",
+        "magento/module-sales": "*",
+        "magento/module-quote": "*",
+        "magento/module-store": "*",
+        "magento/module-cron": "*",
+        "magento/module-config": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Fufa\\Webhook\\": ""
+        }
+    }
+}
