@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<integrations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Integration:etc/integration/api.xsd">
+    <integration name="Fufa AI">
+        <resources>
+            <resource name="Magento_Catalog::catalog"/>
+            <resource name="Magento_Catalog::catalog_inventory"/>
+            <resource name="Magento_Catalog::products"/>
+
+            <resource name="Magento_Sales::sales"/>
+            <resource name="Magento_Sales::sales_operation"/>
+            <resource name="Magento_Sales::sales_order"/>
+            <resource name="Magento_Sales::actions"/>
+            <resource name="Magento_Sales::actions_view"/>
+        </resources>
+    </integration>
+</integrations>
