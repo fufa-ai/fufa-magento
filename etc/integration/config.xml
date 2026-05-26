@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<integrations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Integration:etc/integration.xsd">
+    <integration name="Fufa AI">
+        <email>rachit@fufa.ai</email>
+        <endpoint_url>https://api.fufa.ai/api/ecommerce/magento/oauth/callback</endpoint_url>
+        <identity_link_url>https://api.fufa.ai/api/ecommerce/magento/oauth/identity</identity_link_url>
+    </integration>
+</integrations>
