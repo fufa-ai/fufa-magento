@@ -13,6 +13,7 @@ class Config
     private const XML_PATH_ENDPOINT_URL = 'fufa_webhook/general/endpoint_url';
     private const XML_PATH_HMAC_SECRET = 'fufa_webhook/general/hmac_secret';
     private const XML_PATH_ABANDON_THRESHOLD_MINUTES = 'fufa_webhook/general/abandon_threshold_minutes';
+    private const XML_PATH_LIVECHAT_CHANNEL_ID = 'fufa_livechat/general/channel_id';
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig,
@@ -62,5 +63,14 @@ class Config
         );
 
         return $value > 0 ? $value : 60;
+    }
+
+    public function getLiveChatChannelId(int|string|null $storeId = null): string
+    {
+        return trim((string) $this->scopeConfig->getValue(
+            self::XML_PATH_LIVECHAT_CHANNEL_ID,
+            ScopeInterface::SCOPE_STORE,
+            $storeId
+        ));
     }
 }

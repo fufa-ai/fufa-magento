@@ -10,5 +10,10 @@
                 <abandon_threshold_minutes>60</abandon_threshold_minutes>
             </general>
         </fufa_webhook>
+        <fufa_livechat>
+            <general>
+                <channel_id></channel_id>
+            </general>
+        </fufa_livechat>
     </default>
 </config>

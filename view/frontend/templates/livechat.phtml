@@ -1,0 +1,9 @@
+<?php
+/** @var \Fufa\Webhook\Block\LiveChat $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$channelId = $block->getChannelId();
+if ($channelId === '') {
+    return;
+}
+?>
+<script data-api-url="https://api.fufa.ai/api" src="https://widget.fufa.ai/snippet.js" data-widget-id="<?= $escaper->escapeHtmlAttr($channelId) ?>" async></script>
