@@ -72,6 +72,16 @@ On the Fufa side:
 - `ecommerce_stores.domain` must match the hostname of the Magento store base URL
 - `ecommerce_stores.platform` must be `magento`
 
+### Live Chat
+
+Configure the storefront live chat widget at **Stores → Configuration → Fufa → Live Chat**.
+
+| Setting      | Description                                                                   |
+| ------------ | ----------------------------------------------------------------------------- |
+| `Channel ID` | Channel ID provided by Fufa. Live chat is enabled only when a value is added. |
+
+Live chat will only be enabled when a valid Channel ID is added in **Stores → Configuration → Fufa → Live Chat**. If the Channel ID field is left empty, the Fufa live chat script will not be added to the storefront.
+
 ## Fufa AI Integration (OAuth 1.0a)
 
 The extension preconfigures a Magento Integration named **Fufa AI** so merchants do not have to enter Callback / Identity Link URLs manually. The Callback URL, Identity Link URL, and contact email are managed by the extension and are intentionally read-only in Admin.
